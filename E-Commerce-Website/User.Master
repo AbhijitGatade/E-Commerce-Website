@@ -166,7 +166,7 @@
                  <a href="#">Affiliate Programme</a>
                </li>
                <li class="menu-item">
-                 <a href="#">Ultras Press</a>
+                 <a href="AdminLogin.aspx">Admin Login</a>
                </li>
              </ul>
            </div>

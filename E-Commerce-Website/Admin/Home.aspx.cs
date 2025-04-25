@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace E_Commerce_Website
+namespace E_Commerce_Website.Admin
 {
-	public partial class Admin : System.Web.UI.MasterPage
+	public partial class Home : System.Web.UI.Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
