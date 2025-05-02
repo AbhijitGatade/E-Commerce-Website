@@ -9,33 +9,55 @@ using System.Web;
 namespace E_Commerce_Website.Models
 {
 	public class TblAdmin
-	{
-        string constr = "Data Source=localhost;Database=e_commerce_a;User ID=root;";
+	{   
         public int Id { get; set; }
         public string  Name { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public bool Insert()
+        DBClass db = new DBClass();
+        string query;
+
+        public bool Insert(ref string message)
         {
-            string query = "INSERT INTO admins(Name, Username, Password) ";
+            query = "INSERT INTO admins(Name, Username, Password) ";
             query += "VALUES('" + Name + "', '" + Username + "', '" + Password + "')";
-            MySqlConnection con = new MySqlConnection(constr);
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-            return true;
+            return db.ExecuteNonQuery(query, ref message);
         }
 
-        public DataTable List()
+        public bool Update(ref string message)
+        {
+            query = "UPDATE admins SET  Name = '" + Name + "', ";
+            query += "Username = '" + Username + "', ";
+            query += "Password = '" + Password + "' ";
+            query += "WHERE Id = " + Id;
+            return db.ExecuteNonQuery(query, ref message);
+        }
+
+        public DataTable List(ref string message)
         {
             string query = "SELECT *, ROW_NUMBER() OVER(ORDER BY Name) AS SrNo FROM admins ORDER BY Name";
-            MySqlConnection con = new MySqlConnection(constr);
-            MySqlDataAdapter da = new MySqlDataAdapter(query, con);
-            DataTable dtable = new DataTable();
-            da.Fill(dtable);
+            DataTable dtable = db.List(query, ref message   );
             return dtable;
+        }
+
+        public bool Delete(int id, ref string message)
+        {
+            query = "DELETE FROM admins WHERE Id = " + id;
+            return db.ExecuteNonQuery(query, ref message);
+        }
+
+        public void GetById(int id, ref string message)
+        {
+            string query = "SELECT * FROM Admins WHERE Id = " + id;
+           DataRow row = db.GetSingleRecord(query, ref message);
+            if (row != null)
+            {
+                Id = int.Parse(row["Id"].ToString());
+                Name = row["Name"].ToString();
+                Username = row["Username"].ToString();
+                Password = row["Password"].ToString();
+            }
         }
     }
 }

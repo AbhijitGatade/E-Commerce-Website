@@ -11,7 +11,7 @@ namespace E_Commerce_Website.Admin
 {
 
 
-    public partial class Admins
+    public partial class Categories
     {
 
         /// <summary>
@@ -42,40 +42,31 @@ namespace E_Commerce_Website.Admin
         protected global::System.Web.UI.WebControls.RequiredFieldValidator validateName;
 
         /// <summary>
-        /// txtUsername control.
+        /// txtSrNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUsername;
+        protected global::System.Web.UI.WebControls.TextBox txtSrNo;
 
         /// <summary>
-        /// validateUsername control.
+        /// validateSrNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateUsername;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validateSrNo;
 
         /// <summary>
-        /// txtPasssword control.
+        /// validateRangeSrNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPasssword;
-
-        /// <summary>
-        /// validatePassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator validatePassword;
+        protected global::System.Web.UI.WebControls.RangeValidator validateRangeSrNo;
 
         /// <summary>
         /// btnSave control.

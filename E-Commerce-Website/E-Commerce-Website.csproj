@@ -121,6 +121,7 @@
     <Content Include="About.aspx" />
     <Content Include="AdminLogin.aspx" />
     <Content Include="Admin\Admins.aspx" />
+    <Content Include="Admin\Categories.aspx" />
     <Content Include="Admin\Home.aspx" />
     <Content Include="assets\admin\css\style.css" />
     <Content Include="assets\admin\img\apple-touch-icon.png" />
@@ -291,6 +292,13 @@
     <Compile Include="Admin\Admins.aspx.designer.cs">
       <DependentUpon>Admins.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -308,7 +316,9 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DBClass.cs" />
     <Compile Include="Models\TblAdmin.cs" />
+    <Compile Include="Models\TblCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.Master.cs">
       <DependentUpon>User.Master</DependentUpon>
