@@ -7,20 +7,25 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace E_Commerce_Website
+namespace E_Commerce_Website.Admin
 {
-	public partial class Index : System.Web.UI.Page
+	public partial class Products : System.Web.UI.Page
 	{
 		string message;
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!Page.IsPostBack)
 			{
-				TblCategory category = new TblCategory();				
-				DataTable dtCategories = category.List(ref message);
-				rptCategories.DataSource = dtCategories;
-                rptCategories.DataBind();
-            }
+				bind();
+			}
 		}
+
+		public void bind()
+		{
+			TblProduct product = new TblProduct();
+			DataTable dtable = product.List(ref message);
+			gvData.DataSource = dtable;
+            gvData.DataBind();
+        }
 	}
 }
