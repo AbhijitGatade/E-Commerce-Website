@@ -24,6 +24,15 @@ namespace E_Commerce_Website
         protected global::System.Web.UI.WebControls.Label lblProductName;
 
         /// <summary>
+        /// hdnId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnId;
+
+        /// <summary>
         /// imgProduct control.
         /// </summary>
         /// <remarks>

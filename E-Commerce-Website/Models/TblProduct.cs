@@ -40,12 +40,16 @@ namespace E_Commerce_Website.Models
             return db.ExecuteNonQuery(query, ref message);
         }
 
-        public DataTable List(ref string message)
+        public DataTable List(ref string message, string productids = "")
         {
             query = "SELECT P.*, C.Name AS CategoryName FROM products AS P INNER JOIN categories AS C ON C.Id = P.CategoryId ";
             if (CategoryId != 0)
             {
                 query += "WHERE CategoryId = " + CategoryId + " ";
+            }
+            if (!productids.Equals(""))
+            {
+                query += "WHERE P.Id IN(" + productids + ") ";
             }
             query += "ORDER BY C.SrNo, P.SrNo";
             return db.List(query, ref message);

@@ -11,7 +11,15 @@ namespace E_Commerce_Website
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
+			if (!IsPostBack)
+			{
+				if (Request.Cookies["UserType"] != null)
+				{
+					pnlUser.Visible = true;
+					lblUsername.Text = Request.Cookies["Name"].Value.ToString();
+					pnlLogin.Visible = false;
+				}
+			}
 		}
 	}
 }

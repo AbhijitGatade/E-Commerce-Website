@@ -7,6 +7,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">User Login</h2>
+                <asp:Label runat="server" ID="lblMessage" ForeColor="Red"></asp:Label>
             </div>
             <div class="tab-content">
                 <div id="all" class="active">
@@ -21,7 +22,7 @@
                                 <label for="password" class="form-label">Password</label>
                                 <asp:TextBox runat="server" ID="txtPassword" TextMode="Password" CssClass="form-control"></asp:TextBox>
                             </div>
-                            <asp:Button runat="server" ID="btnLogin" Text="Login" CssClass="btn btn-primary w-100" />
+                            <asp:Button runat="server" ID="btnLogin" OnClick="btnLogin_Click" Text="Login" CssClass="btn btn-primary w-100" />
                             <p class="text-center mt-3"><a href="#">Forgot password?</a></p>
                         </div>
                         <div class="col-lg-6">
@@ -46,7 +47,7 @@
                                 <label for="password" class="form-label">Confirm Password</label>
                                 <asp:TextBox runat="server" ID="txtRegConfirmRegister" TextMode="Password" CssClass="form-control"></asp:TextBox>
                             </div>
-                            <asp:Button runat="server" ID="btnRegister" Text="Register" CssClass="btn btn-primary w-100" />
+                            <asp:Button runat="server" OnClick="btnRegister_Click" ID="btnRegister" Text="Register" CssClass="btn btn-primary w-100" />
                         </div>
                     </div>
                 </div>

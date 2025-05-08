@@ -16,13 +16,19 @@ namespace E_Commerce_Website
 		{
 			if (!Page.IsPostBack)
 			{
-				TblCategory category = new TblCategory();
-				int id = int.Parse(Request.QueryString["CategoryId"].ToString());
-				category.GetById(id, ref message);
-				lblCategoryName.Text = category.Name;
-
-				TblProduct product = new TblProduct();
-				product.CategoryId = id;
+                TblProduct product = new TblProduct();
+                if (Request.QueryString["CategoryId"] != null)
+                {
+                    TblCategory category = new TblCategory();
+                    int id = int.Parse(Request.QueryString["CategoryId"].ToString());
+                    category.GetById(id, ref message);
+                    lblCategoryName.Text = category.Name;
+                    product.CategoryId = id;
+                }
+                else
+                {
+                 lblCategoryName.Text = "All Products";
+                }
                 DataTable dtProducts = product.List(ref message);
 				rptProducts.DataSource = dtProducts;
                 rptProducts.DataBind();

@@ -18,6 +18,9 @@ namespace E_Commerce_Website
 			{
 				TblProduct product = new TblProduct();
 				int id = int.Parse(Request.QueryString["Id"].ToString());
+
+				hdnId.Value = id.ToString();
+
 				product.GetById(id, ref message);
 				lblProductName.Text = product.Name;
 				lblName.Text = product.Name;
